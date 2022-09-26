@@ -63,3 +63,29 @@ nav ul li:hover .underline {
 nav ul li:hover {
   cursor: pointer;
 }
+#arrow {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  bottom: 30px;
+}
+#arrow img {
+  height: 100px;
+}
+#arrow span {
+  font-weight: 900;
+  color: rgb(126, 108, 9);
+  font-size: 30px;
+}
+#arrow .underline {
+  width: 0%;
+  transition: width 0.2s;
+}
+#arrow:hover .underline {
+  width: 100%;
+}
+#arrow:hover {
+  cursor: pointer;
+}
