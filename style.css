@@ -20,9 +20,6 @@ body {
   position: sticky;
   top: 0;
   left: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 .title {
   color: rgb(126, 108, 9);
@@ -98,4 +95,31 @@ nav ul li:hover {
 }
 #arrow:hover {
   cursor: pointer;
+}
+@media (min-width: 800px) {
+  #mainpage header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+@media (max-width: 800px) {
+  nav ul {
+    flex-direction: column;
+    line-height: 10px;
+    padding-top: 20px;
+  }
+  .underline {
+    top: 17px;
+  }
+  .underlineactive {
+    top: 17px;
+  }
+  #title {
+    font-size: 45px;
+    padding: 5vw;
+  }
+  #arrow .underline {
+    top: 35px;
+  }
 }
