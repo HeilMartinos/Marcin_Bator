@@ -11,8 +11,6 @@ body {
 #mainpage {
   width: 100%;
   height: 100vh;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
-    url(pic/background.jpg);
 }
 #mainpage header {
   background: rgba(223, 190, 7, 0.2);
