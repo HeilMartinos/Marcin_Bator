@@ -1,31 +1,37 @@
+///////ARROW
 var arrow = $("#arrow");
-console.log(mainpage);
-
-arrow.animate({ bottom: "30px" });
 arrow.hover(
   function () {
-    arrow.animate({ bottom: "20px" });
+    arrow.animate({ bottom: "-=20px" });
   },
   function () {
-    arrow.animate({ bottom: "30px" });
+    arrow.animate({ bottom: "+=20px" });
   }
 );
 
-var counter = 0;
-function chbg() {
-  const bgs = [
-    "linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),rl(pic/bg1.png);",
-    "linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),rl(pic/bg2.jpg);",
-  ];
-  const main = document.querySelector("#mainpage");
-  const bg = bgs[counter];
-  main.style.backgroundImage = bg;
-
-  counter++;
-  if (counter > 1) {
-    counter = 0;
-  }
+///////SLIDER
+var active = 0;
+var imgs = [];
+for (var i = 0; i < 2; i++) {
+  var nr = i + 1;
+  imgs[i] = { url: $("#bgimg" + nr), value: "hidden" };
 }
-for (var i = 0; i < 10; i++) {
-  setTimeout(chbg, 1000);
+chbg();
+function chbg() {
+  for (var i = 0; i < 2; i++) {
+    if (imgs[i].value === "visible") {
+      imgs[i].url.css("display", "none");
+      imgs[i].url.slideToggle("slow");
+      imgs[i].value = "hidden";
+      break;
+    }
+  }
+  imgs[active].value = "visible";
+  imgs[active].url.css("display", "block");
+  imgs[active].url.slideToggle("slow");
+  active++;
+  if (active > 1) {
+    active = 0;
+  }
+  setTimeout(chbg, 5000);
 }
