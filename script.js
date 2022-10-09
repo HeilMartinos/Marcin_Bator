@@ -40,14 +40,17 @@ function chbg() {
 }
 
 ////////SCROLL
-window.scrollTo(0, 0);
-$("#arrow").click(function () {
+function scroller(id) {
   $("body").animate(
     {
-      scrollTop: $("#page1").offset().top,
+      scrollTop: $(id).offset().top,
     },
     1000
   );
+}
+window.scrollTo(0, 0);
+$("#arrow").click(function () {
+  scroller("#page1");
 });
 //////SCROLLMENU
 var sgdist = document.querySelector("#mainpage").getBoundingClientRect().top;
@@ -90,3 +93,24 @@ function check() {
   }
 }
 $(window).on("scroll", check);
+//////SCROLLMENULINKS
+$("#sg").click(function () {
+  $("body").animate(
+    {
+      scrollTop: 0,
+    },
+    1000
+  );
+});
+$("#om").click(function () {
+  scroller("#page1");
+});
+$("#us").click(function () {
+  scroller("#page2");
+});
+$("#pr").click(function () {
+  scroller("#page3");
+});
+$("#ko").click(function () {
+  scroller("#page4");
+});
